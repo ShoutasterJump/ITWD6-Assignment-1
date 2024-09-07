@@ -1,0 +1,100 @@
+/* Background Image Container */
+.bg-image {
+  position: relative; /* Ensure child elements are positioned relative to this container */
+}
+
+/* Text Over Background Image */
+.bg-text {
+  background-color: rgba(0, 0, 0, 0.4); /* Black background with 40% opacity */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%; /* Responsive width */
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .bg-text {
+    width: 90%;
+    font-size: 0.9em;
+  }
+}
+
+/* Flip Box Container */
+.flip-box {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px; /* Enable 3D effect */
+}
+
+/* Inner Container for Flip Effect */
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Flip Effect on Hover */
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and Back Side Positioning */
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hide back side when facing away */
+}
+
+/* Back Side Styling */
+.flip-box-back {
+  transform: rotateY(180deg);
+}
+
+/* Custom Buttons */
+.btn-custom-form, .btn-custom-xr {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  border-radius: 0; /* Square borders */
+}
+
+/* Active and Hover States for Custom Form Button */
+.btn-custom-form.active,
+.btn-custom-form:focus,
+.btn-custom-form:focus-visible,
+.btn-custom-form.show,
+.btn-custom-form:hover {
+  background-color: #28a745;
+  color: white;
+}
+
+/* Active and Hover States for Custom XR Button */
+.btn-custom-xr.active,
+.btn-custom-xr:focus,
+.btn-custom-xr:focus-visible,
+.btn-custom-xr.show,
+.btn-custom-xr:hover {
+  background-color: orange;
+  color: white;
+  border: none;
+}
+
+/* Highlighted Text */
+.highlight {
+  background-color: yellow;
+  color: black;
+}

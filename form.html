@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-success-subtle">
+      <div class="container-fluid px-2">
+        <img class="img-fluid" src="images/global.png" />
+        <a class="navbar-brand flex-fill">ITWD6.408</a>
+
+        <button
+          class="navbar-toggler text-center ms-2 d-lg-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSearch"
+          aria-controls="navbarSearch"
+          aria-expanded="false"
+          aria-label="Toggle search"
+        >
+          <span class="bi-search h3"></span>
+        </button>
+
+        <button
+          class="navbar-toggler text-center"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse text-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav w-25 float-end">
+            <a class="nav-link" href="index.html">Home</a>
+            <a
+              class="nav-link active bg-warning-subtle"
+              aria-current="page"
+              href="form.html"
+              >Forms</a
+            >
+            <a class="nav-link" href="xml-rss.html">XML/JSON</a>
+            <a class="nav-link" href="js-demo.html">JavaScript</a>
+            <a class="nav-link" href="my-research.html">Research</a>
+          </div>
+        </div>
+
+        <button
+          class="btn btn-outline-secondary ms-2 d-none d-lg-inline-block"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSearch"
+          aria-controls="navbarSearch"
+          aria-expanded="false"
+          aria-label="Toggle search"
+        >
+          <span class="bi-search h3"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Search Bar -->
+    <div class="collapse" id="navbarSearch">
+      <div class="bg-body-tertiary p-3">
+        <form class="d-flex">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+      <div class="container-fluid p-1">
+        <div class="row">
+
+          <!-- Form Buttons -->
+          <div class="col-12 col-lg-3">
+            <div class="row m-1">
+              <div class="col col-lg-12 p-1">
+                <button
+                  class="btn btn-custom-form w-100"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#htmlform"
+                  aria-expanded="true"
+                  aria-controls="htmlform"
+                >
+                  HTML FORM
+                </button>
+              </div>
+              <div class="col col-lg-12 p-1">
+                <button
+                  class="btn btn-custom-form w-100"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#googleform"
+                  aria-expanded="false"
+                  aria-controls="googleform"
+                >
+                  GOOGLE FORM
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Section -->
+          <div class="col-12 col-lg-9 mb-3">
+
+            <!-- HTML Form -->
+            <div id="formAccordion">
+              <div
+                class="collapse show"
+                id="htmlform"
+                data-bs-parent="#formAccordion"
+              >
+                <p class="text-center d-lg-none">Mobile Technology Form</p>
+                <div class="bg-secondary-subtle">
+                  <form
+                    name="text form"
+                    action="https://pttech.co.nz/API/handlesurvey.php"
+                    method="post"
+                    class="p-2"
+                    onsubmit="return validateCheckboxes();"
+                  >
+                    <div class="row mb-3">
+                      <label
+                        for="inputFirstName"
+                        class="col-sm-2 col-form-label"
+                        >First Name:</label
+                      >
+                      <div class="col-sm-10">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputFirstName"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="inputLastName" class="col-sm-2 col-form-label"
+                        >Last Name:</label
+                      >
+                      <div class="col-sm-10">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputLastName"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label
+                        class="col col-form-label"
+                        style="font-weight: bold"
+                        >Address</label
+                      >
+                    </div>
+                    <div class="row mb-3">
+                      <label for="inputLine1" class="col-sm-2 col-form-label"
+                        >Line 1:</label
+                      >
+                      <div class="col-sm-10">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputLine1"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="inputLine2" class="col-sm-2 col-form-label"
+                        >Line 2:</label
+                      >
+                      <div class="col-sm-10">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputLine2"
+                        />
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="inputTownCity" class="col-sm-2 col-form-label"
+                        >Town/City:</label
+                      >
+                      <div class="col-sm-10">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputTownCity"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <fieldset class="row mb-3">
+                      <legend class="col-form-label col-sm-2 pt-0">
+                        Gender:
+                      </legend>
+                      <div class="col-sm-10">
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="inlineRadioOptions"
+                            id="GenderRadio1"
+                            value="Male"
+                            required
+                          />
+                          <label class="form-check-label" for="GenderRadio1"
+                            >Male</label
+                          >
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="inlineRadioOptions"
+                            id="GenderRadio2"
+                            value="Female"
+                          />
+                          <label class="form-check-label" for="GenderRadio2"
+                            >Female</label
+                          >
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="inlineRadioOptions"
+                            id="GenderRadio3"
+                            value="Other"
+                          />
+                          <label class="form-check-label" for="GenderRadio3"
+                            >Other</label
+                          >
+                        </div>
+                      </div>
+                    </fieldset>
+                    <fieldset class="row mb-3" required>
+                      <legend class="col-form-label col-sm-2 pt-0">
+                        Mobile Phone Type:
+                      </legend>
+                      <div class="col-sm-10">
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="inlineCheckOptions"
+                            id="TypeRadio1"
+                            value="Windows"
+                          />
+                          <label class="form-check-label" for="TypeRadio1"
+                            >Windows</label
+                          >
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="inlineCheckOptions"
+                            id="TypeRadio2"
+                            value="Apple"
+                          />
+                          <label class="form-check-label" for="TypeRadio2"
+                            >Apple</label
+                          >
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="inlineCheckOptions"
+                            id="TypeRadio3"
+                            value="Android"
+                          />
+                          <label class="form-check-label" for="TypeRadio3"
+                            >Android</label
+                          >
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="inlineCheckOptions"
+                            id="TypeRadio4"
+                            value="Other"
+                          />
+                          <label class="form-check-label" for="TypeRadio4"
+                            >Other</label
+                          >
+                        </div>
+                      </div>
+                    </fieldset>
+                    <div class="row mb-3">
+                      <label
+                        for="inputPhoneProvider"
+                        class="col-sm-2 col-form-label"
+                        >Mobile Provider:</label
+                      >
+                      <div class="col-sm-10">
+                        <select
+                          class="form-select"
+                          aria-label="Default select example"
+                          id="inputPhoneProvider"
+                        >
+                          <option value="None" selected>None</option>
+                          <option value="Spark">Spark</option>
+                          <option value="Vodafone">Vodafone</option>
+                          <option value="Now">Now</option>
+                          <option value="Other">Other</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="PhoneStudyTextarea" class="form-label"
+                        >Do you use your phone for study? Please Explain:</label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="PhoneStudyTextarea"
+                        rows="3"
+                      ></textarea>
+                    </div>
+                    <div class="row mb-3">
+                      <div class="col-1 col-lg-4"></div>
+                      <button type="reset" class="col-2 btn btn-primary me-1">
+                        Reset
+                      </button>
+                      <button type="submit" class="col-2 btn btn-primary">
+                        Sumbit
+                      </button>
+                      <div class="col-7 col-lg-4"></div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <!-- Google Form -->
+              <div
+                class="collapse"
+                id="googleform"
+                data-bs-parent="#formAccordion"
+              >
+                <div class="bg-secondary-subtle">
+                  <iframe
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSfMndU5rS4gonb5nZcdN19_UU2AZ_jhQVeV4gJEbvW-gAJO2A/viewform?embedded=true"
+                    width="100%"
+                    height="1730"
+                    frameborder="0"
+                    marginheight="0"
+                    marginwidth="0"
+                    >Loading…</iframe
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="container-fluid p-0 mt-1">
+        <div
+          class="row border border-success bg-success-subtle w-100 align-items-center"
+        >
+          <div class="col-6 col-lg-8">
+            <div class="row">
+              <div class="text-center col-lg-6">
+                <span class="bi-linkedin h3"></span>
+                <span class="bi-youtube h3"></span>
+                <span class="bi-twitter h3"></span>
+                <span class="bi-facebook h3"></span>
+                <span class="bi-instagram h3"></span>
+              </div>
+              <div class="col-lg-6">
+                <p class="text-center align-middle">
+                  © 2024 Alexander Borawski
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-4">
+            <p class="text-end" style="color: blue">
+              <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal"
+                >PRIVACY POLICY</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Privacy Policy Modal -->
+      <div
+        class="modal fade"
+        id="privacyModal"
+        tabindex="-1"
+        aria-labelledby="privacyModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="privacyModalLabel">Privacy Policy</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <h5>Privacy Policy</h5>
+              <p>Last updated: [Date]</p>
+              <p>
+                This website is an educational project developed as part of a
+                university course. The website does not collect any personal
+                data, create user accounts, or share any information with third
+                parties. Your privacy is important to us, and we are committed
+                to protecting your data.
+              </p>
+
+              <h6>Data Collection</h6>
+              <p>
+                This website does not collect any personal information. No
+                forms, cookies, or tracking mechanisms are used to gather data
+                from visitors. Your browsing activity on this website remains
+                anonymous.
+              </p>
+
+              <h6>Third-Party Services</h6>
+              <p>
+                This website uses Bootstrap for styling and is hosted on GitHub
+                Pages. While we do not actively collect data, these platforms
+                may operate under their own privacy policies. Please refer to
+                their respective policies for more information:
+              </p>
+              <ul>
+                <li><a href="https://getbootstrap.com">Bootstrap</a></li>
+                <li>
+                  <a
+                    href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement"
+                    >GitHub Privacy Policy</a
+                  >
+                </li>
+              </ul>
+
+              <h6>External Links</h6>
+              <p>
+                This website may contain links to external websites that are
+                relevant to the educational content. We are not responsible for
+                the privacy practices or content of these external sites. We
+                encourage you to review the privacy policies of any third-party
+                sites you visit.
+              </p>
+
+              <h6>Images and Content Usage</h6>
+              <p>
+                All images and content used on this website are for educational
+                purposes only. The website is non-commercial and does not
+                generate any profit. If you have any concerns regarding the use
+                of images or content, please feel free to contact us.
+              </p>
+
+              <h6>Changes to This Policy</h6>
+              <p>
+                As this website evolves, this privacy policy may be updated to
+                reflect any changes in functionality or services. Any updates
+                will be posted here with a corresponding "Last updated" date.
+              </p>
+
+              <h6>Contact</h6>
+              <p>
+                If you have any questions or concerns regarding this privacy
+                policy, please contact us via the contact information provided
+                via GitHub.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Bootstrap JS Bundle (Including Popper) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Custom JS -->
+    <script>
+      function validateCheckboxes() {
+        const checkboxes = document.querySelectorAll(
+          'input[name="inlineCheckOptions"]'
+        );
+        let checked = false;
+
+        checkboxes.forEach((checkbox) => {
+          if (checkbox.checked) {
+            checked = true;
+          }
+        });
+
+        if (!checked) {
+          alert("Please select at least one Mobile Phone Type.");
+        }
+
+        return checked;
+      }
+    </script>
+  </body>
+</html>

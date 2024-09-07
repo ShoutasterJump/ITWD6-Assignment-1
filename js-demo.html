@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-success-subtle">
+      <div class="container-fluid px-2">
+        <img class="img-fluid" src="images/global.png" />
+        <a class="navbar-brand flex-fill">ITWD6.408</a>
+        <button
+          class="navbar-toggler text-center ms-2 d-lg-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSearch"
+          aria-controls="navbarSearch"
+          aria-expanded="false"
+          aria-label="Toggle search"
+        >
+          <span class="bi-search h3"></span>
+        </button>
+        <button
+          class="navbar-toggler text-center"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav w-25 float-end">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="form.html">Forms</a>
+            <a class="nav-link" href="xml-rss.html">XML/JSON</a>
+            <a
+              class="nav-link actiive bg-warning-subtle"
+              aria-current="page"
+              href="js-demo.html"
+              >JavaScript</a
+            >
+            <a class="nav-link" href="my-research.html">Research</a>
+          </div>
+        </div>
+        <button
+          class="btn btn-outline-secondary ms-2 d-none d-lg-inline-block"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSearch"
+          aria-controls="navbarSearch"
+          aria-expanded="false"
+          aria-label="Toggle search"
+        >
+          <span class="bi-search h3"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Search Bar -->
+    <div class="collapse" id="navbarSearch">
+      <div class="bg-body-tertiary p-3">
+        <form class="d-flex">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+      <div class="container-fluid p-1">
+        <div class="row">
+
+          <!-- Demo Buttons -->
+          <div class="col-12 col-lg-3">
+            <div class="row">
+              <button
+                class="col-6 col-lg-12 btn btn-custom-xr mb-1"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#demo1"
+                aria-expanded="false"
+                aria-controls="demo1"
+              >
+                DEMO 1
+              </button>
+              <button
+                class="col-6 col-lg-12 btn btn-custom-xr mb-1"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#demo2"
+                aria-expanded="false"
+                aria-controls="demo2"
+              >
+                DEMO 2
+              </button>
+              <button
+                class="col-6 col-lg-12 btn btn-custom-xr mb-1"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#demo3"
+                aria-expanded="false"
+                aria-controls="demo3"
+              >
+                DEMO 3
+              </button>
+              <button
+                class="col-6 col-lg-12 btn btn-custom-xr mb-1"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#demo4"
+                aria-expanded="false"
+                aria-controls="demo4"
+              >
+                DEMO 4
+              </button>
+            </div>
+          </div>
+          <div class="col-12 col-lg-9 z-1">
+            <div id="jsAccordion">
+
+              <!-- Demo 1 -->
+              <div
+                class="collapse m-1"
+                id="demo1"
+                data-bs-parent="#jsAccordion"
+              >
+                <h1 class="mb-4">Customise Your Web Page</h1>
+                <div class="form-group">
+                  <label for="bgColour">Background Colour:</label>
+                  <select id="bgColour" class="form-control">
+                    <option value="white">White</option>
+                    <option value="lightblue">Blue</option>
+                    <option value="lightgreen">Green</option>
+                    <option value="lightgray">Gray</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="textSize">Text Size:</label>
+                  <select id="textSize" class="form-control">
+                    <option value="16px">16px</option>
+                    <option value="18px">18px</option>
+                    <option value="20px">20px</option>
+                    <option value="22px">22px</option>
+                    <option value="24px">24px</option>
+                  </select>
+                </div>
+                <div id="content" class="mt-4 p-3 border">
+                  <p>
+                    This is some sample text. Adjust the text size and
+                    background colour using the dropdown menus above.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Demo 2 -->
+              <div
+                class="collapse m-1"
+                id="demo2"
+                data-bs-parent="#jsAccordion"
+              >
+                <h1 class="text-center">Online Shop</h1>
+
+                <div id="auth-section" class="row justify-content-center mt-4">
+                  <div class="col-md-5">
+                    <div id="signup-section" class="card p-4 mb-4">
+                      <h2 class="text-center">Sign Up</h2>
+                      <div class="mb-3">
+                        <label for="signup-username" class="form-label"
+                          >Username</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="signup-username"
+                          placeholder="Username"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="signup-password" class="form-label"
+                          >Password</label
+                        >
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="signup-password"
+                          placeholder="Password"
+                        />
+                      </div>
+                      <button id="signup-btn" class="btn btn-primary w-100">
+                        Sign Up
+                      </button>
+                      <p
+                        id="signup-message"
+                        class="mt-3 text-center text-danger"
+                      ></p>
+                    </div>
+
+                    <div id="signin-section" class="card p-4">
+                      <h2 class="text-center">Sign In</h2>
+                      <div class="mb-3">
+                        <label for="signin-username" class="form-label"
+                          >Username</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="signin-username"
+                          placeholder="Username"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="signin-password" class="form-label"
+                          >Password</label
+                        >
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="signin-password"
+                          placeholder="Password"
+                        />
+                      </div>
+                      <button id="signin-btn" class="btn btn-success w-100">
+                        Sign In
+                      </button>
+                      <p
+                        id="signin-message"
+                        class="mt-3 text-center text-danger"
+                      ></p>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  id="welcome-section"
+                  class="text-center mt-5"
+                  style="display: none"
+                >
+                  <h2>Welcome, <span id="welcome-username"></span>!</h2>
+                  <button id="logout-btn" class="btn btn-danger mt-3">
+                    Logout
+                  </button>
+                </div>
+              </div>
+
+              <!-- Demo 3 -->
+              <div
+                class="collapse m-1"
+                id="demo3"
+                data-bs-parent="#jsAccordion"
+              >
+                <div class="product-section">
+                  <h2 id="product-title">Android Tablet</h2>
+                  <img
+                    id="product-image"
+                    src="images/tablet1.png"
+                    alt="Tablet"
+                    class="img-fluid"
+                  />
+                  <p id="product-description">
+                    This is our Standard Android Tablet with great features you
+                    would enjoy.
+                  </p>
+                </div>
+                <div class="comment-section">
+                  <h3>Comments</h3>
+                  <div id="comments-list"></div>
+                  <form id="comment-form">
+                    <div class="form-group">
+                      <label for="commenter-name">Name:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="commenter-name"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="comment-text">Comment:</label>
+                      <textarea
+                        class="form-control"
+                        id="comment-text"
+                        rows="3"
+                        required
+                      ></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Post</button>
+                  </form>
+                </div>
+              </div>
+
+              <!-- Demo 4 -->
+              <div
+                class="collapse m-1"
+                id="demo4"
+                data-bs-parent="#jsAccordion"
+              >
+                <div class="container mt-5">
+                  <h1>Online Shop</h1>
+                  <div class="form-group">
+                    <label for="itemSelect">Select an Item:</label>
+                    <select id="itemSelect" class="form-control">
+                      <option value="" disabled selected>Select an Item</option>
+                    </select>
+                  </div>
+                  <div id="itemDetails" class="mb-4">
+                    <h3 id="itemTitle">Title:</h3>
+                    <img
+                      id="itemImage"
+                      class="image-preview"
+                      src=""
+                      alt="Item Image"
+                    />
+                    <p id="itemDescription">Description:</p>
+                  </div>
+                  <h4>Add New Item</h4>
+                  <form id="addItemForm">
+                    <div class="form-group">
+                      <label for="itemTitleInput">Title:</label>
+                      <input
+                        type="text"
+                        id="itemTitleInput"
+                        class="form-control"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="itemDescriptionInput">Description:</label>
+                      <textarea
+                        id="itemDescriptionInput"
+                        class="form-control"
+                        rows="3"
+                        required
+                      ></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="itemImageUrlInput">Image URL:</label>
+                      <input
+                        type="text"
+                        id="itemImageUrlInput"
+                        class="form-control"
+                        required
+                      />
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                      Add to List
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="container-fluid p-0 mt-1">
+        <div
+          class="row border border-success bg-success-subtle w-100 align-items-center"
+        >
+          <div class="col-6 col-lg-8">
+            <div class="row">
+              <div class="text-center col-lg-6">
+                <span class="bi-linkedin h3"></span>
+                <span class="bi-youtube h3"></span>
+                <span class="bi-twitter h3"></span>
+                <span class="bi-facebook h3"></span>
+                <span class="bi-instagram h3"></span>
+              </div>
+              <div class="col-lg-6">
+                <p class="text-center align-middle">
+                  © 2024 Alexander Borawski
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-4">
+            <p class="text-end" style="color: blue">
+              <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal"
+                >PRIVACY POLICY</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Privacy Policy Modal -->
+      <div
+        class="modal fade"
+        id="privacyModal"
+        tabindex="-1"
+        aria-labelledby="privacyModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="privacyModalLabel">Privacy Policy</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <h5>Privacy Policy</h5>
+              <p>Last updated: [Date]</p>
+              <p>
+                This website is an educational project developed as part of a
+                university course. The website does not collect any personal
+                data, create user accounts, or share any information with third
+                parties. Your privacy is important to us, and we are committed
+                to protecting your data.
+              </p>
+
+              <h6>Data Collection</h6>
+              <p>
+                This website does not collect any personal information. No
+                forms, cookies, or tracking mechanisms are used to gather data
+                from visitors. Your browsing activity on this website remains
+                anonymous.
+              </p>
+
+              <h6>Third-Party Services</h6>
+              <p>
+                This website uses Bootstrap for styling and is hosted on GitHub
+                Pages. While we do not actively collect data, these platforms
+                may operate under their own privacy policies. Please refer to
+                their respective policies for more information:
+              </p>
+              <ul>
+                <li><a href="https://getbootstrap.com">Bootstrap</a></li>
+                <li>
+                  <a
+                    href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement"
+                    >GitHub Privacy Policy</a
+                  >
+                </li>
+              </ul>
+
+              <h6>External Links</h6>
+              <p>
+                This website may contain links to external websites that are
+                relevant to the educational content. We are not responsible for
+                the privacy practices or content of these external sites. We
+                encourage you to review the privacy policies of any third-party
+                sites you visit.
+              </p>
+
+              <h6>Images and Content Usage</h6>
+              <p>
+                All images and content used on this website are for educational
+                purposes only. The website is non-commercial and does not
+                generate any profit. If you have any concerns regarding the use
+                of images or content, please feel free to contact us.
+              </p>
+
+              <h6>Changes to This Policy</h6>
+              <p>
+                As this website evolves, this privacy policy may be updated to
+                reflect any changes in functionality or services. Any updates
+                will be posted here with a corresponding "Last updated" date.
+              </p>
+
+              <h6>Contact</h6>
+              <p>
+                If you have any questions or concerns regarding this privacy
+                policy, please contact us via the contact information provided
+                via GitHub.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Bootstrap JS Bundle (Including Popper) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Custom JS -->
+    <script>
+      $(document).ready(function () {
+        $("#bgColour").change(function () {
+          var bgColour = $(this).val();
+          $("main").css("background-color", bgColour);
+        });
+        $("#textSize").change(function () {
+          var textSize = $(this).val();
+          $("#content").css("font-size", textSize);
+        });
+        const users = {
+          user1: "password1",
+          user2: "password2",
+        };
+        $("#signup-btn").click(function () {
+          const username = $("#signup-username").val();
+          const password = $("#signup-password").val();
+          if (username && password) {
+            if (users[username]) {
+              $("#signup-message").text("Username already exists.");
+            } else {
+              users[username] = password;
+              $("#signup-message").text("Sign up successful.");
+            }
+          } else {
+            $("#signup-message").text("Please fill in both fields.");
+          }
+        });
+        $("#signin-btn").click(function () {
+          const username = $("#signin-username").val();
+          const password = $("#signin-password").val();
+          if (username && password) {
+            if (users[username] === password) {
+              $("#auth-section").hide();
+              $("#welcome-section").show();
+              $("#welcome-username").text(username);
+            } else {
+              $("#signin-message").text("Invalid username or password.");
+            }
+          } else {
+            $("#signin-message").text("Please fill in both fields.");
+          }
+        });
+        $("#logout-btn").click(function () {
+          $("#auth-section").show();
+          $("#welcome-section").hide();
+          $("#signin-username").val("");
+          $("#signin-password").val("");
+        });
+      });
+      $(document).ready(function () {
+        let comments = [
+          { name: "John Doe", text: "Great product!" },
+          { name: "Jane Smith", text: "Really enjoyed this." },
+        ];
+        function renderComments() {
+          $("#comments-list").empty();
+          comments.forEach((comment) => {
+            $("#comments-list").append(`
+                    <div class="comment-box alert alert-secondary">
+                        <strong>${comment.name}</strong>: ${comment.text}
+                    </div>
+                `);
+          });
+        }
+        renderComments();
+        $("#comment-form").submit(function (event) {
+          event.preventDefault();
+          let name = $("#commenter-name").val();
+          let text = $("#comment-text").val();
+          if (name && text) {
+            comments.push({ name, text });
+            $("#commenter-name").val("");
+            $("#comment-text").val("");
+            renderComments();
+          }
+        });
+      });
+      $(document).ready(function () {
+        var items = [
+          {
+            title: "Android Tablet",
+            description:
+              "This is our Standard Android Tablet with great features you would enjoy.",
+            imageUrl: "images/tablet1.png",
+          },
+          {
+            title: "Apple Tablet",
+            description:
+              "This is our Standard Apple Tablet with great features you would enjoy.",
+            imageUrl: "images/tablet2.png",
+          },
+          {
+            title: "Windows Tablet",
+            description:
+              "This is our Standard Windows Tablet with great features you would enjoy.",
+            imageUrl: "images/tablet3.png",
+          },
+        ];
+        function populateDropdown() {
+          var $select = $("#itemSelect");
+          $select.find("option:not(:first)").remove();
+          items.forEach(function (item, index) {
+            $select.append(
+              $("<option>", {
+                value: index,
+                text: item.title,
+              })
+            );
+          });
+        }
+        function displayItemDetails(index) {
+          var item = items[index];
+          if (item) {
+            $("#itemTitle").text("Title: " + item.title);
+            $("#itemImage").attr("src", item.imageUrl);
+            $("#itemDescription").text("Description: " + item.description);
+          }
+        }
+        populateDropdown();
+        $("#itemSelect").on("change", function () {
+          var selectedIndex = $(this).val();
+          displayItemDetails(selectedIndex);
+        });
+        $("#addItemForm").on("submit", function (event) {
+          event.preventDefault();
+          var title = $("#itemTitleInput").val();
+          var description = $("#itemDescriptionInput").val();
+          var imageUrl = $("#itemImageUrlInput").val();
+          items.push({
+            title: title,
+            description: description,
+            imageUrl: imageUrl,
+          });
+          populateDropdown();
+          $(this).find("input, textarea").val("");
+        });
+      });
+    </script>
+  </body>
+</html>
